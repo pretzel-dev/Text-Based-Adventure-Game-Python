@@ -3,10 +3,12 @@ import time
 import keyboard as input
 import os
 import shutil
+from changescenes import ChangeScene
 
 f = Figlet(font='ascii___')
 
 currentoption = 0
+gamestate = False
 
 print('program started')
 
@@ -56,7 +58,10 @@ def DrawMenu():
 
 
 def Play():
+    global gamestate
     os.system('cls' if os.name == 'nt' else 'clear')
+    ChangeScene('GameMain')
+    gamestate = True
     pass
 
 def Exit():
@@ -79,7 +84,7 @@ def ClickedButton():
 
 
 
-while True:
+while gamestate is False:
     if input.is_pressed('w') or input.is_pressed('up_arrow'):
         NavigateMenu('up')
         time.sleep(1)
