@@ -93,7 +93,7 @@ while gamestate is False:
         time.sleep(1)
     elif input.is_pressed('esc'):
         break
-    elif input.is_pressed('enter'):
+    elif input.is_pressed('enter') or input.is_pressed('space'):
         ClickedButton()
         time.sleep(1)
 
